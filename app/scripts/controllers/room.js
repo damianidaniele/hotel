@@ -8,10 +8,6 @@
  * Controller of the hotelApp
  */
 angular.module('hotelApp')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('RoomController', function () {
+    console.log( 'hellooooo');
   });

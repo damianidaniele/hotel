@@ -7,11 +7,12 @@
  * # MainCtrl
  * Controller of the hotelApp
  */
-angular.module('hotelApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+angular
+	.module( 'hotelApp' )
+	.controller('MainController', function ( DataService ) {
+		DataService
+			.getData()
+			.success( function( data ) {
+	 			this.rooms = data;
+			}.bind( this ))
   });

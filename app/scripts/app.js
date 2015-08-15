@@ -12,21 +12,28 @@ angular
   .module('hotelApp', [
     'ngAnimate',
     'ngResource',
-    'ngRoute'
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+  .config( function( $stateProvider, $urlRouterProvider ) {
+    $stateProvider
+      .state( 'property', {
+        url: '/',
+        views: {
+          "mainView": { 
+            templateUrl: 'views/main.html',
+            controller: 'MainController',
+            controllerAs: 'main'
+          }
+        }
+      } )
+      .state( 'property.room', {
+        url: 'room/:type',
+        views: {
+          "roomView": { 
+            templateUrl: 'views/room.html',
+            controller: 'RoomController',
+            controllerAs: 'room'
+          }
+        }
+      } ); ; 
   });
