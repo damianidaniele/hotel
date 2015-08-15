@@ -14,5 +14,5 @@ angular
 			.getData()
 			.success( function( data ) {
 	 			this.rooms = data;
-			}.bind( this ))
+			}.bind( this ));
   });

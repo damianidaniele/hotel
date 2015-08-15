@@ -14,7 +14,7 @@ angular
     'ngResource',
     'ui.router'
   ])
-  .config( function( $stateProvider, $urlRouterProvider ) {
+  .config( function( $stateProvider ) {
     $stateProvider
       .state( 'property', {
         url: '/',
@@ -35,5 +35,5 @@ angular
             controllerAs: 'room'
           }
         }
-      } ); ; 
+      } );
   });
